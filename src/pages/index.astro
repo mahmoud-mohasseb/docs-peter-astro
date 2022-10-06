@@ -1,11 +1,13 @@
+---
+import Footer from "../components/Footer/footer.jsx";
+---
+
 <script is:inline>
   // Redirect your homepage to the first page of documentation.
   // If you have a landing page, remove this script and add it here!
   // window.location.pathname = `/en/introduction`;
 </script>
-
-<title>My Homepage</title>
-
+<title>Mahmoud's DOCS</title>
 <body>
   <div class="relative overflow-hidden bg-white">
     <div class="mx-auto max-w-7xl">
@@ -30,7 +32,10 @@
               <div
                 class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
               >
-                <a href="https://flowbite.com" class="flex items-center">
+                <a
+                  href="https://hoda-hoda.netlify.app/"
+                  class="flex items-center"
+                >
                   <img
                     src="https://cdn1.iconfinder.com/data/icons/logos-and-brands-3/512/84_Dev_logo_logos-512.png"
                     class="mr-3 h-6 sm:h-9"
@@ -412,34 +417,10 @@
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
       <img
         class="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
-        src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+        src="https://res.cloudinary.com/practicaldev/image/fetch/s--V0ekZaVJ--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://thepracticaldev.s3.amazonaws.com/i/h68x0up43hmknl5tjcww.jpg"
         alt=""
       />
     </div>
   </div>
-
-  <footer
-    class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"
-  >
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-      >2022 <a href="#" class="hover:underline">Astro docs Mahmoud</a>. All
-      Rights Reserved.
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
-    >
-      <li>
-        <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
-      </li>
-      <li>
-        <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-      </li>
-      <li>
-        <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
-      </li>
-      <li>
-        <a href="#" class="hover:underline">Contact</a>
-      </li>
-    </ul>
-  </footer>
+  <Footer />
 </body>
