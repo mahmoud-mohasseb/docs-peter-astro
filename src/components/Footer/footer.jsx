@@ -2,36 +2,48 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-        2022{" "}
-        <a href="#" class="hover:underline">
-          Astro docs Mahmoud
-        </a>
-        . All Rights Reserved.
-      </span>
-      <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-        <li>
-          <a href="#" class="mr-4 hover:underline md:mr-6">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#" class="mr-4 hover:underline md:mr-6">
-            Privacy Policy
-          </a>
-        </li>
-        <li>
-          <a href="#" class="mr-4 hover:underline md:mr-6">
-            Licensing
-          </a>
-        </li>
-        <li>
-          <a href="#" class="hover:underline">
-            Contact
-          </a>
-        </li>
-      </ul>
+    <footer className="mt-32">
+      <div className="sm:px-8">
+        <div className="mx-auto max-w-7xl lg:px-8">
+          <div className="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
+            <div className="relative px-4 sm:px-8 lg:px-12">
+              <div className="mx-auto max-w-2xl lg:max-w-5xl">
+                <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+                  <div className="flex gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200">
+                    <a
+                      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+                      href="/about"
+                    >
+                      About
+                    </a>
+                    <a
+                      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+                      href="/projects"
+                    >
+                      Projects
+                    </a>
+                    <a
+                      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+                      href="/speaking"
+                    >
+                      Speaking
+                    </a>
+                    <a
+                      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+                      href="/uses"
+                    >
+                      Uses
+                    </a>
+                  </div>
+                  <p className="text-sm text-zinc-400 dark:text-zinc-500">
+                    2022 Mahmoud-Ahmed. All rights reserved.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };

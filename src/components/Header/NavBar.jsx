@@ -1,353 +1,412 @@
-import React from "react";
+import { Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
+import {
+  ArrowPathIcon,
+  Bars3Icon,
+  BookmarkSquareIcon,
+  CalendarIcon,
+  ChartBarIcon,
+  CursorArrowRaysIcon,
+  LifebuoyIcon,
+  PhoneIcon,
+  PlayIcon,
+  ShieldCheckIcon,
+  Squares2X2Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
-const NavBar = () => {
+const solutions = [
+  {
+    name: "Analytics",
+    description:
+      "Get a better understanding of where your traffic is coming from.",
+    href: "#",
+    icon: ChartBarIcon,
+  },
+  {
+    name: "Engagement",
+    description: "Speak directly to your customers in a more meaningful way.",
+    href: "#",
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: "Security",
+    description: "Your customers' data will be safe and secure.",
+    href: "#",
+    icon: ShieldCheckIcon,
+  },
+  {
+    name: "Integrations",
+    description: "Connect with third-party tools that you're already using.",
+    href: "#",
+    icon: Squares2X2Icon,
+  },
+  {
+    name: "Automations",
+    description:
+      "Build strategic funnels that will drive your customers to convert",
+    href: "#",
+    icon: ArrowPathIcon,
+  },
+];
+const callsToAction = [
+  { name: "Watch Demo", href: "#", icon: PlayIcon },
+  { name: "Contact Sales", href: "#", icon: PhoneIcon },
+];
+const resources = [
+  {
+    name: "Help Center",
+    description:
+      "Get all of your questions answered in our forums or contact support.",
+    href: "#",
+    icon: LifebuoyIcon,
+  },
+  {
+    name: "Guides",
+    description:
+      "Learn how to maximize our platform to get the most out of it.",
+    href: "#",
+    icon: BookmarkSquareIcon,
+  },
+  {
+    name: "Events",
+    description:
+      "See what meet-ups and other events we might be planning near you.",
+    href: "#",
+    icon: CalendarIcon,
+  },
+  {
+    name: "Security",
+    description: "Understand how we take your privacy seriously.",
+    href: "#",
+    icon: ShieldCheckIcon,
+  },
+];
+const recentPosts = [
+  { id: 1, name: "Boost your conversion rate", href: "#" },
+  {
+    id: 2,
+    name: "How to use search engine optimization to drive traffic to your site",
+    href: "#",
+  },
+  { id: 3, name: "Improve your customer experience", href: "#" },
+];
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
+export default function Example() {
   return (
-    <nav class="bg-white border-gray-200 px-2 md:px-4 py-2.5 dark:bg-gray-900">
-      <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-        <a href="https://hoda-hoda.netlify.app/" class="flex items-center">
-          <img
-            src="https://cdn1.iconfinder.com/data/icons/logos-and-brands-3/512/84_Dev_logo_logos-512.png"
-            class="mr-3 h-6 sm:h-9"
-            alt="Dev Logo"
-          />
-          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            Dev world
-          </span>
-        </a>
-        <div class="flex items-center md:order-2">
-          <a
-            href="#"
-            class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
-          >
-            Login
-          </a>
-          <a
-            href="#"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-          >
-            Sign up
-          </a>
-          <button
-            data-collapse-toggle="mega-menu-icons"
-            type="button"
-            class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="mega-menu-icons"
-            aria-expanded="false"
-          >
-            <span class="sr-only">Open main menu</span>
-            <svg
-              aria-hidden="true"
-              class="w-6 h-6"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </button>
-        </div>
-        <div
-          id="mega-menu-icons"
-          class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
-        >
-          <ul class="flex flex-col mt-4 text-sm font-medium md:flex-row md:space-x-8 md:mt-0">
-            <li>
-              <a
-                href="#"
-                class="block py-2 pr-4 pl-3 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
-                aria-current="page"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <button
-                id="mega-menu-icons-dropdown-button"
-                data-dropdown-toggle="mega-menu-icons-dropdown"
-                class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Company
-                <svg
-                  aria-hidden="true"
-                  class="ml-1 w-5 h-5 md:w-4 md:h-4"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-              <div
-                id="mega-menu-icons-dropdown"
-                class="grid hidden absolute z-10 grid-cols-2 w-auto text-sm bg-white rounded-lg border border-gray-100 shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700"
-                data-popper-reference-hidden=""
-                data-popper-escaped=""
-                data-popper-placement="bottom"
-                style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 10px, 0px);"
-              >
-                <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
-                  <ul
-                    class="space-y-4"
-                    aria-labelledby="mega-menu-icons-dropdown-button"
+    <Popover className="relative bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+          <div className="flex justify-start lg:w-0 lg:flex-1">
+            <a href="#">
+              <span className="sr-only">Your Company</span>
+              <img
+                className="h-8 w-auto sm:h-10"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="-my-2 -mr-2 md:hidden">
+            <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+              <span className="sr-only">Open menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </Popover.Button>
+          </div>
+          <Popover.Group as="nav" className="hidden space-x-10 md:flex">
+            <Popover className="relative">
+              {({ open }) => (
+                <>
+                  <Popover.Button
+                    className={classNames(
+                      open ? "text-gray-900" : "text-gray-500",
+                      "group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    )}
                   >
-                    <li>
-                      <a
-                        href="#"
-                        class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
-                      >
-                        <span class="sr-only">About us</span>
-                        <svg
-                          class="mr-2 w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                          aria-hidden="true"
-                          focusable="false"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                        About Us
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
-                      >
-                        <span class="sr-only">Library</span>
-                        <svg
-                          class="mr-2 w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                          aria-hidden="true"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                        Library
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
-                      >
-                        <span class="sr-only">Resources</span>
-                        <svg
-                          class="mr-2 w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                          aria-hidden="true"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
-                        </svg>
-                        Resources
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
-                      >
-                        <span class="sr-only">Pro Version</span>
-                        <svg
-                          class="mr-2 w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                          aria-hidden="true"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                        Pro Version
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
-                  <ul class="space-y-4">
-                    <li>
-                      <a
-                        href="#"
-                        class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
-                      >
-                        <span class="sr-only">Blog</span>
-                        <svg
-                          class="mr-2 w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                          aria-hidden="true"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
-                            clip-rule="evenodd"
-                          ></path>
-                          <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
-                        </svg>
-                        Blog
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
-                      >
-                        <span class="sr-only">Newsletter</span>
-                        <svg
-                          class="mr-2 w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                          aria-hidden="true"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
-                        </svg>
-                        Newsletter
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
-                      >
-                        <span class="sr-only">Playground</span>
-                        <svg
-                          class="mr-2 w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                          aria-hidden="true"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
-                        </svg>
-                        Playground
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
-                      >
-                        <span class="sr-only">License</span>
-                        <svg
-                          class="mr-2 w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                          aria-hidden="true"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path>
-                        </svg>
-                        License
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="p-4 text-gray-900 dark:text-white">
-                  <ul class="space-y-4">
-                    <li>
-                      <a
-                        href="#"
-                        class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
-                      >
-                        <span class="sr-only">Contact Us</span>
-                        <svg
-                          class="mr-2 w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                          aria-hidden="true"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                        </svg>
-                        Contact Us
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
-                      >
-                        <span class="sr-only">Support Center</span>
-                        <svg
-                          class="mr-2 w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                          aria-hidden="true"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                        Support Center
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
-                      >
-                        <span class="sr-only">Terms</span>
-                        <svg
-                          class="mr-2 w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                          aria-hidden="true"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
-                          <path
-                            fill-rule="evenodd"
-                            d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                        Terms
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Team
-              </a>
-            </li>
-          </ul>
+                    <span>Solutions</span>
+                    <ChevronDownIcon
+                      className={classNames(
+                        open ? "text-gray-600" : "text-gray-400",
+                        "ml-2 h-5 w-5 group-hover:text-gray-500"
+                      )}
+                      aria-hidden="true"
+                    />
+                  </Popover.Button>
+
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="opacity-0 translate-y-1"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transition ease-in duration-150"
+                    leaveFrom="opacity-100 translate-y-0"
+                    leaveTo="opacity-0 translate-y-1"
+                  >
+                    <Popover.Panel className="absolute z-10 -ml-4 mt-3 w-screen max-w-md transform px-2 sm:px-0 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2">
+                      <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                        <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                          {solutions.map((item) => (
+                            <a
+                              key={item.name}
+                              href={item.href}
+                              className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
+                            >
+                              <item.icon
+                                className="h-6 w-6 flex-shrink-0 text-indigo-600"
+                                aria-hidden="true"
+                              />
+                              <div className="ml-4">
+                                <p className="text-base font-medium text-gray-900">
+                                  {item.name}
+                                </p>
+                                <p className="mt-1 text-sm text-gray-500">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                        <div className="space-y-6 bg-gray-50 px-5 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
+                          {callsToAction.map((item) => (
+                            <div key={item.name} className="flow-root">
+                              <a
+                                href={item.href}
+                                className="-m-3 flex items-center rounded-md p-3 text-base font-medium text-gray-900 hover:bg-gray-100"
+                              >
+                                <item.icon
+                                  className="h-6 w-6 flex-shrink-0 text-gray-400"
+                                  aria-hidden="true"
+                                />
+                                <span className="ml-3">{item.name}</span>
+                              </a>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </Popover.Panel>
+                  </Transition>
+                </>
+              )}
+            </Popover>
+
+            <a
+              href="#"
+              className="text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              Pricing
+            </a>
+            <a
+              href="/en/introduction"
+              className="text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              Docs
+            </a>
+
+            <Popover className="relative">
+              {({ open }) => (
+                <>
+                  <Popover.Button
+                    className={classNames(
+                      open ? "text-gray-900" : "text-gray-500",
+                      "group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    )}
+                  >
+                    <span>More</span>
+                    <ChevronDownIcon
+                      className={classNames(
+                        open ? "text-gray-600" : "text-gray-400",
+                        "ml-2 h-5 w-5 group-hover:text-gray-500"
+                      )}
+                      aria-hidden="true"
+                    />
+                  </Popover.Button>
+
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="opacity-0 translate-y-1"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transition ease-in duration-150"
+                    leaveFrom="opacity-100 translate-y-0"
+                    leaveTo="opacity-0 translate-y-1"
+                  >
+                    <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
+                      <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                        <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                          {resources.map((item) => (
+                            <a
+                              key={item.name}
+                              href={item.href}
+                              className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
+                            >
+                              <item.icon
+                                className="h-6 w-6 flex-shrink-0 text-indigo-600"
+                                aria-hidden="true"
+                              />
+                              <div className="ml-4">
+                                <p className="text-base font-medium text-gray-900">
+                                  {item.name}
+                                </p>
+                                <p className="mt-1 text-sm text-gray-500">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                        <div className="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8">
+                          <div>
+                            <h3 className="text-base font-medium text-gray-500">
+                              Recent Posts
+                            </h3>
+                            <ul role="list" className="mt-4 space-y-4">
+                              {recentPosts.map((post) => (
+                                <li
+                                  key={post.id}
+                                  className="truncate text-base"
+                                >
+                                  <a
+                                    href={post.href}
+                                    className="font-medium text-gray-900 hover:text-gray-700"
+                                  >
+                                    {post.name}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="mt-5 text-sm">
+                            <a
+                              href="#"
+                              className="font-medium text-indigo-600 hover:text-indigo-500"
+                            >
+                              View all posts
+                              <span aria-hidden="true"> &rarr;</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </Popover.Panel>
+                  </Transition>
+                </>
+              )}
+            </Popover>
+          </Popover.Group>
+          <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
+            <a
+              href="#"
+              className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              Sign in
+            </a>
+            <a
+              href="#"
+              className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+            >
+              Sign up
+            </a>
+          </div>
         </div>
       </div>
-    </nav>
-  );
-};
 
-export default NavBar;
+      <Transition
+        as={Fragment}
+        enter="duration-200 ease-out"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="duration-100 ease-in"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+      >
+        <Popover.Panel
+          focus
+          className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
+        >
+          <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+            <div className="px-5 pt-5 pb-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <img
+                    className="h-8 w-auto"
+                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    alt="Your Company"
+                  />
+                </div>
+                <div className="-mr-2">
+                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <span className="sr-only">Close menu</span>
+                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                  </Popover.Button>
+                </div>
+              </div>
+              <div className="mt-6">
+                <nav className="grid gap-y-8">
+                  {solutions.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"
+                    >
+                      <item.icon
+                        className="h-6 w-6 flex-shrink-0 text-indigo-600"
+                        aria-hidden="true"
+                      />
+                      <span className="ml-3 text-base font-medium text-gray-900">
+                        {item.name}
+                      </span>
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            </div>
+            <div className="space-y-6 py-6 px-5">
+              <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+                <a
+                  href="#"
+                  className="text-base font-medium text-gray-900 hover:text-gray-700"
+                >
+                  Pricing
+                </a>
+
+                <a
+                  href="#"
+                  className="text-base font-medium text-gray-900 hover:text-gray-700"
+                >
+                  Docs
+                </a>
+                {resources.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-base font-medium text-gray-900 hover:text-gray-700"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+              <div>
+                <a
+                  href="#"
+                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                >
+                  Sign up
+                </a>
+                <p className="mt-6 text-center text-base font-medium text-gray-500">
+                  Existing customer?{" "}
+                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                    Sign in
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </Popover.Panel>
+      </Transition>
+    </Popover>
+  );
+}
