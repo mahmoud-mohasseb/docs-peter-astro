@@ -1,5 +1,5 @@
 export const SITE = {
-  title: "Doc's Mahmoud",
+  title: "Doc's Peter",
   description: "Using Astro with UI frameworks.",
   defaultLanguage: "en_US",
 };
@@ -28,6 +28,7 @@ export type Frontmatter = {
 export const KNOWN_LANGUAGES = {
   English: "en",
 } as const;
+
 export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
 
 export const GITHUB_EDIT_URL = `https://github.com/withastro/astro/tree/main/examples/docs`;
@@ -53,6 +54,10 @@ export const SIDEBAR: Sidebar = {
       { text: "👍 Page 2", link: "en/page-2" },
       { text: "❓ Page 3", link: "en/page-3" },
       { text: "🚀 Page 5", link: "en/page-5" },
+    ],
+    "🇮🇳 Section subHeader": [
+      { text: "🚀 Peter testing", link: "en/peter" },
+      { text: "🎟 Peter2", link: "en/peter2" },
     ],
     "👨🏼‍💻 Another Section": [{ text: "⚡️ Page 4", link: "en/page-4" }],
   },

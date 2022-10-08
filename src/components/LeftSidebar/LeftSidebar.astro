@@ -21,7 +21,7 @@ const sidebar = SIDEBAR[langCode];
       Object.entries(sidebar).map(([header, children]) => (
         <li>
           <div class="nav-group">
-            <h3>{header}</h3>
+            <h4>{header}</h4>
             <ul>
               {children.map((child) => {
                 const url = Astro.site?.pathname + child.link;
@@ -91,24 +91,56 @@ const sidebar = SIDEBAR[langCode];
   }
 
   .nav-link a {
-    font-size: 1rem;
+    /* font-size: 1rem;
     margin: 1px;
     padding: 0.3rem 1rem;
     font: inherit;
     color: inherit;
     text-decoration: none;
+    display: block; */
+    position: relative;
+    padding: 0.3rem 1rem;
+    margin: 2px;
     display: block;
+    padding: 4px 0;
+    font-size: 1rem;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
   }
 
-  .nav-link a:hover,
-  .nav-link a:focus {
-    /* background-color: aquamarine; */
-    background-color: var(--theme-bg-hover);
+  .nav-link a::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #3498db;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
   }
+  .nav-link a :hover {
+    color: #95a695;
+  }
+
+  .nav-link a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* .nav-link a:hover,
+  .nav-link a:focus {
+    background-color: var(--theme-bg-hover);
+  } */
 
   .nav-link a[aria-current="page"] {
-    color: var(--theme-text-accent);
-    background-color: var(--theme-bg-accent);
+    /* color: var(--theme-text-accent); */
+    /* background-color: var(--theme-bg-accent); */
+    color: #3498db;
     font-weight: 600;
   }
 

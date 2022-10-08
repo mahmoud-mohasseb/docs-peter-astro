@@ -19,7 +19,7 @@
   color: var(--theme-text-light);
   border-style: solid;
   border-width: 1px;
-  border-radius: 0.25rem;
+  border-radius: 1.25rem;
   outline: 0;
   cursor: pointer;
   transition-timing-function: ease-out;

@@ -1,11 +1,16 @@
 ---
 import { getLanguageFromURL, KNOWN_LANGUAGE_CODES } from "../../languages";
+import ThemeToggleButton from "../RightSidebar/ThemeToggleButton";
+
 import * as CONFIG from "../../config";
 import AstroLogo from "./AstroLogo.astro";
 import SkipToContent from "./SkipToContent.astro";
 import SidebarToggle from "./SidebarToggle";
 import LanguageSelect from "./LanguageSelect";
 import Search from "./Search";
+
+
+// 
 
 type Props = {
   currentPage: string;
@@ -21,6 +26,7 @@ const lang = getLanguageFromURL(currentPage);
     <div class="menu-toggle">
       <SidebarToggle client:idle />
     </div>
+    
     <div class="logo flex">
       <a href="/">
         <AstroLogo size={40} />
@@ -33,6 +39,9 @@ const lang = getLanguageFromURL(currentPage);
         <LanguageSelect lang={lang} client:idle />
       )
     }
+    <div style="margin: 2rem 0; text-align: center;">
+      <ThemeToggleButton client:visible />
+    </div>
     <div class="search-item">
       <Search client:idle />
     </div>
