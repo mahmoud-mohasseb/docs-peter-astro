@@ -78,7 +78,7 @@ body {font-family: Arial;}
 /* Style the buttons inside the tab */
 .tab button {
   background-color: inherit;
-  border: 1px solid black;
+  border: 1px solid #E26868;
   float: left;
   cursor: pointer;
   padding: 5px 15px;
