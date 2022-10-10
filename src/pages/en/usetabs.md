@@ -79,12 +79,13 @@ body {font-family: Arial;}
 
 /* Style the buttons inside the tab */
 .tab button {
-  background-color: inherit;
+  /* background-color: inherit; */
+  background-color: #f1f1f1;
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 10px 10px;
+  padding: 5px 15px;
   margin: 0px 3px;
   transition: 0.3s;
   font-size: 17px;
@@ -96,9 +97,9 @@ body {font-family: Arial;}
 
 /* Create an active/current tablink class */
 .tab button.active {
-  /* background-color: #ccc; */
+  /* background: #ccc; */
   background-color: #FF8787;
-  display:block;
+  /* display:block; */
 }
 
 /* Style the tab content */
