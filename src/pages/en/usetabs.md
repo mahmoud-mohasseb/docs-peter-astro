@@ -73,17 +73,13 @@ body {font-family: Arial;}
 .tab {
  overflow: hidden;
  text-align: center;
- /* border: 0.5px solid black; */
-  /* background-color: #f1f1f1; */
 }
 
 /* Style the buttons inside the tab */
 .tab button {
-  /* background-color: inherit; */
-  background-color: #f1f1f1;
+  background-color: inherit;
+  border: 1px solid black;
   float: left;
-  border: none;
-  outline: none;
   cursor: pointer;
   padding: 5px 15px;
   margin: 0px 3px;
@@ -97,9 +93,7 @@ body {font-family: Arial;}
 
 /* Create an active/current tablink class */
 .tab button.active {
-  /* background: #ccc; */
   background-color: #FF8787;
-  /* display:block; */
 }
 
 /* Style the tab content */
