@@ -58,6 +58,7 @@ export const SIDEBAR: Sidebar = {
     "🇮🇳 Section subHeader": [
       { text: "🚀 Peter testing", link: "en/peter" },
       { text: "🎟 Peter2", link: "en/peter2" },
+      { text: "🎟 usetabs", link: "en/usetabs" },
     ],
     "👨🏼‍💻 Another Section": [{ text: "⚡️ Page 4", link: "en/page-4" }],
   },
